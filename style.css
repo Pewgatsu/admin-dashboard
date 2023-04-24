@@ -11,18 +11,14 @@ html, body {
     min-height: 100vh;
     height: 100%;
     overflow: auto;
-    
 }
 
 body {
     background: #d4d4d4;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    
     display: grid;
-
     grid-template-columns: clamp(220px, 25%, 280px) 1fr;
     grid-template-rows: minmax(250px, 300px) 1fr;
-
     grid-template-areas:
     "sidenav header"
     "sidenav main";
@@ -42,7 +38,6 @@ body {
     height: 100vh;
     background:#363740;
     color: #a4a6b3;
-
 }
 
 
@@ -57,17 +52,11 @@ body {
     display: flex;
     padding: 1.2rem;
     letter-spacing: 1.3px;
-
 }
 
-.sidenav ul {
-    margin: 0;
-    padding: 0;
-}
 
 
 .sidenav .menu {
-   
     display: flex;
     flex-direction: column;
     row-gap: 50px;
@@ -103,7 +92,6 @@ body {
     grid-area: header;
     padding: 20px 40px;
     display: grid;
-    
     grid-template-areas:
     "searchbar profile"
     "welcomebanner buttons";
