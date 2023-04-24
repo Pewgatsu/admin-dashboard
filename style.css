@@ -3,44 +3,52 @@
     padding: 0;
     box-sizing: border-box;
 
-    /* border: 1px solid blue; */
+    /* border: 1px solid gray; */
    
 }
 
 html, body {
-    
     min-height: 100vh;
-    overflow: hidden;
+    height: 100%;
+    overflow: auto;
+    
 }
 
 body {
-    height: 100vh;
+    background: #d4d4d4;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
+    
     display: grid;
 
     grid-template-columns: clamp(220px, 25%, 280px) 1fr;
-    grid-template-rows: minmax(180px, 200px) 1fr;
+    grid-template-rows: minmax(250px, 300px) 1fr;
 
     grid-template-areas:
-    "sidenav navbar"
+    "sidenav header"
     "sidenav main";
-    
-    
     
 }
 
 
+/*
+    Styles for the side navigation bar
+*/
 
 .sidenav {
-    padding: 20px 20px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    min-height: min-content;
     height: 100vh;
+    background:#363740;
+    color: #a4a6b3;
 
-    background-color: #0ea5e9;
+}
 
+
+.sidenav .menu-item:hover{
+    background-color: #a4a6b3;
     color: white;
-    
-
 }
 
 
@@ -48,11 +56,18 @@ body {
     list-style-type: none;
     display: flex;
     padding: 1.2rem;
+    letter-spacing: 1.3px;
+
+}
+
+.sidenav ul {
+    margin: 0;
+    padding: 0;
 }
 
 
 .sidenav .menu {
-    
+   
     display: flex;
     flex-direction: column;
     row-gap: 50px;
@@ -63,6 +78,7 @@ body {
     min-width: 20px;
     margin-right: 1.25rem;
     margin-left: 0.75rem;
+    font-weight: 600;
 }
 
 
@@ -75,26 +91,175 @@ body {
 }
 
 
-.navbar {
-    grid-area: navbar;
+
+/*
+    Styles for the header
+*/
+
+
+
+.header {
+    background: #f7f8fc;
+    grid-area: header;
+    padding: 20px 40px;
+    display: grid;
+    
+    grid-template-areas:
+    "searchbar profile"
+    "welcomebanner buttons";
 }
+
+.header i {
+    font-size: x-large;
+}
+
+.header img {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.search-container {
+    grid-area: searchbar;
+    padding-right: 25%;
+    display: flex;
+    align-items: center;
+    text-align: start;
+    gap: 40px;
+}
+
+.search-container .search-bar {
+    height: 40px;
+    width: 100%;
+    padding: 15px; 
+    padding-left: 20px;
+    background:#e0e1e6f8;
+    border-radius: 20px;
+    border: none;
+}
+
+.profile-container {
+    padding: 20px;
+    grid-area: profile;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 30px;
+}
+
+.profile-container img {
+    width: 50px;
+    height: 50px;
+}
+
+.welcome-banner-container {
+    grid-area: welcomebanner;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+}
+
+.welcome-banner-container .banner-greeting {
+    display: flex;
+    flex-direction: column;
+    letter-spacing: 1.3px;
+}
+
+.welcome-banner-container img {
+    width: 75px;
+    height: 75px;
+}
+
+.header-button-container {
+    grid-area: buttons;
+    
+    
+    display: flex;
+    
+    
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 50px;
+}
+
+
+.header-button-container button {
+    
+    padding: 15px;
+    width: 110px;
+    border: none;
+    background: #4b5563;
+    color: #f7f8fc;
+    border-radius: 25px;
+
+}
+
+
+
+
+
+
+
+
+
+
 
 main {
     grid-area: main;
-    /* display: grid;
 
-    grid-template-rows: repeat(auto-fit, minmax(250px,1fr));
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); */
+    padding: 20px;
+    display: grid;
+    gap: 50px;
+
+    /* grid-template-rows: repeat(auto-fit, minmax(250px,1fr));
+    */
+    grid-template-columns: minmax(50%, 75%) 1fr;
+
+    grid-template-areas:
+   "projects  sidebar-right";
+   
 
 }
 
 
-/* 
 .projects {
     grid-area: projects;
+    
+    display: grid;
+
+    padding: 20px;
+
+    gap: 20px;
+
+    grid-template-columns: repeat(3, minmax(200px, 500px));
+    grid-template-rows: repeat(2, minmax(200px, 200px));
+}
+
+.project {
+    border-radius: 15px;
+    height: 200px;
 }
 
 .sidebar-right {
     grid-area: sidebar-right;
-} */
+
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    row-gap: 20px;
+}
+
+.sidebar-right article {
+
+    
+    
+    height: 350px;
+    border-radius: 10px;
+    
+}
+
 
